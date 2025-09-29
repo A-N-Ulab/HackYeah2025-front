@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           name: 'ghp-react-build'
-          path: dist
+          path: out
         
       - name: Deploy to GH pages
         uses: actions/deploy-pages@v4
