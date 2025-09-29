@@ -2,6 +2,7 @@
   "name": "hackyeah2025",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://a-n-ulab.github.io/HackYeah2025-front",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
