@@ -1,0 +1,86 @@
+.menu-container {
+
+    /*Placing*/
+    width: 100vw;
+    height: 100vh;
+
+    padding: 5rem 2.5rem;
+
+    /*Colors*/
+    color: var(--font-color);
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transform-origin: center center;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    user-select: none;
+    touch-action: none;
+
+
+}
+
+
+.btn-menu {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 0.75rem;
+
+    margin-top: 0.75rem;
+
+
+    width: 10rem;
+    border-radius: 10px;
+    border: 2px solid var(--h1-color);
+    color: var(--accent-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    font-family: var(--font-press-start-2p);
+}
+
+.swipe-go-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+
+    margin: 0;
+    text-align: center;
+
+
+    width: 15rem;
+
+    border-radius: 10px;
+    border: 2px solid var(--h1-color);
+    color: var(--accent-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    font-family: var(--font-press-start-2p);
+}
+
+
+
+span.swipe {
+    color: var(--confirm-color);
+    font-size: 1.25rem;
+}
+
+span.and {
+    color: var(--decline-color);
+    font-size: 1rem;
+}
+
+span.go {
+    color: var(--h1-color);
+    font-size: 1.5rem;
+}
+
+.info-icon {
+    position: absolute;
+    bottom: 2.5rem;
+    height: 2.5rem;
+    margin-top: 0.75rem;
+}
