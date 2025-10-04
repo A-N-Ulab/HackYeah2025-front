@@ -1,0 +1,198 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.tinder-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+.tinder-container h1 {
+  color: white;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-stack {
+  position: relative;
+  height: 500px;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.card-content h2 {
+  font-size: 4rem;
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.card-content p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 10px 0 0 0;
+}
+
+.action-indicator {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 3px solid;
+}
+
+.action-indicator.like {
+  color: #4CAF50;
+  border-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.action-indicator.dislike {
+  color: #F44336;
+  border-color: #F44336;
+  background: rgba(244, 67, 54, 0.1);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.action-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.dislike-btn {
+  background: #F44336;
+  color: white;
+}
+
+.dislike-btn:hover {
+  background: #d32f2f;
+}
+
+.like-btn {
+  background: #4CAF50;
+  color: white;
+}
+
+.like-btn:hover {
+  background: #388e3c;
+}
+
+.no-more-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: white;
+}
+
+.no-more-cards h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.reset-btn {
+  padding: 12px 24px;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.reset-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.reset-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .tinder-container {
+    padding: 10px;
+  }
+  
+  .card {
+    width: 280px;
+    height: 380px;
+  }
+  
+  .tinder-container h1 {
+    font-size: 2rem;
+  }
+  
+  .card-content h2 {
+    font-size: 3rem;
+  }
+}
