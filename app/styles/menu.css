@@ -41,6 +41,11 @@
     transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
     font-family: var(--font-press-start-2p);
 }
+.btn-menu:hover {
+    transform: scale(1.05);
+    transform: rotate(5deg);
+    transition-duration: 0.2s;
+}
 
 .swipe-go-btn {
     display: inline-block;
