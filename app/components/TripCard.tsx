@@ -10,8 +10,8 @@ export default function TripCard({id}: {id: number}) {
 
     return (
         <div className="trip-card-container">
-            <p>Name</p>
-            <p>Image</p>
+            <p className="trip-title">Trip Name</p>
+            <div className="trip-image">Image</div>
         </div>
     )
 }
