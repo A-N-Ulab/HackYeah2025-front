@@ -1,9 +1,8 @@
 :root{
-    --neutral-bg-color: #E8BC5F;
-    --neutral-h1-color: #d69610;
-    --neutral-confirm-color: #4f9356;
-    --neutral-decline-color: #c1564c;
-    --neutral-font-color: #2e2b26;
-    
-    --dark-bg-color:  #dfe0df;
+    --bg-color: #151515;
+    --accent-color: #E8BC5F;
+    --h1-color: #d69610;
+    --confirm-color: #4f9356;
+    --decline-color: #c1564c;
+    --font-color: #dfe0df;
 }
