@@ -1,20 +1,19 @@
 'use client'
 
-import {store} from "@/app/api/store";
-import {useEffect, useRef, useState} from "react";
 import TripCard from "@/app/components/TripCard";
-import DraggableHorizontal, {DraggableHandle} from "@/app/components/DraggableHorizontal";
+import DraggableHorizontal from "@/app/components/DraggableHorizontal";
 import Auth from "../hooks/Auth";
+import {getCookie} from "@/app/utils/cookies";
+import {useEffect, useState} from "react";
 
 
 export default function Trip() {
-    const storage = store()
+    const [tripId, setTripId] = useState<number>(-1)
 
     useEffect(() => {
-        if (storage.tripId == -1) {
-
-        }
-    })
+        if (getCookie("tripId"))
+            setTripId(Number(getCookie("tripId")))
+    }, [])
 
     const SwipeUp = () => {
         console.log("swiped up")
@@ -45,7 +44,7 @@ export default function Trip() {
                         }}
                         onCancel={() => console.log("snap back — not a swipe")}
                     >
-                        <TripCard key={storage.tripId} id={storage.tripId} />
+                        <TripCard key={tripId} id={tripId} />
                     </DraggableHorizontal>
                 </div>
             </div>
