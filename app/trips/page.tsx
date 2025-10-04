@@ -2,6 +2,7 @@
 
 import {useState, useEffect} from "react";
 import {Trip} from "@/app/types/Trip";
+import Auth from "@/app/hooks/Auth";
 
 export default function Trips() {
     const [trips, setTrips] = useState<Trip[]>([])
@@ -15,8 +16,8 @@ export default function Trips() {
     }, [])
 
     return (
-        <div>
+        <Auth>
             Trip list
-        </div>
+        </Auth>
     );
 }

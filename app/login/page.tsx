@@ -1,9 +1,10 @@
 'use client'
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {loginUserQuery} from "@/app/api/userApi";
 import {useRouter} from "next/navigation";
 import Image from "next/image";
+import {getCookie, setCookie} from "@/app/utils/cookies";
 
 export default function Login() {
     const [username, setUsername] = useState("")
@@ -11,6 +12,11 @@ export default function Login() {
     const [error, setError] = useState("")
     const router = useRouter()
     const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(() => {
+        if (getCookie("Token"))
+            router.push("/")
+    }, [getCookie("Token")])
 
     const submit = async () => {
         if (!username || !password) {
@@ -24,6 +30,7 @@ export default function Login() {
 
         if (res.token) {
             router.push("/")
+            setCookie("Token", res.token)
             setError("")
         } else {
             setError("Wrong username or password")

@@ -1,9 +1,11 @@
-import Image from "next/image";
+import Auth from "@/app/hooks/Auth";
 
 export default function Home() {
     return (
-        <div className="w-full h-full">
+        <Auth>
+            <div className="w-full h-full">
 
-        </div>
-    );
+            </div>
+        </Auth>
+    )
 }

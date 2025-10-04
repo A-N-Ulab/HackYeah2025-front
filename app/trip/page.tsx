@@ -4,6 +4,7 @@ import {store} from "@/app/api/store";
 import {useEffect, useRef, useState} from "react";
 import TripCard from "@/app/components/TripCard";
 import DraggableHorizontal, {DraggableHandle} from "@/app/components/DraggableHorizontal";
+import Auth from "../hooks/Auth";
 
 
 export default function Trip() {
@@ -28,24 +29,26 @@ export default function Trip() {
     }
 
     return (
-        <div className="w-full h-full">
-            <div className="container">
-                <DraggableHorizontal
-                    onDrag={(x, y) => {}}
-                    onSwipe={(dir) => {
-                        if (dir === "up") {
-                            SwipeUp()
-                        } else if (dir === 1) {
-                            SwipeRight()
-                        } else if (dir === -1) {
-                            SwipeLeft()
-                        }
-                    }}
-                    onCancel={() => console.log("snap back — not a swipe")}
-                >
-                    <TripCard key={storage.tripId} id={storage.tripId} />
-                </DraggableHorizontal>
+        <Auth>
+            <div className="w-full h-full">
+                <div className="container">
+                    <DraggableHorizontal
+                        onDrag={(x, y) => {}}
+                        onSwipe={(dir) => {
+                            if (dir === "up") {
+                                SwipeUp()
+                            } else if (dir === 1) {
+                                SwipeRight()
+                            } else if (dir === -1) {
+                                SwipeLeft()
+                            }
+                        }}
+                        onCancel={() => console.log("snap back — not a swipe")}
+                    >
+                        <TripCard key={storage.tripId} id={storage.tripId} />
+                    </DraggableHorizontal>
+                </div>
             </div>
-        </div>
+        </Auth>
     )
 }
