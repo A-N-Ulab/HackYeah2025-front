@@ -167,6 +167,7 @@ const DraggableHorizontal = forwardRef<DraggableHandle, Props>(function Draggabl
                 applyTransform();
             };
 
+            // @ts-ignore
             el.addEventListener("transitionend", onEnd);
             return;
         }
@@ -206,6 +207,7 @@ const DraggableHorizontal = forwardRef<DraggableHandle, Props>(function Draggabl
                 applyTransform();
             };
 
+            // @ts-ignore
             el.addEventListener("transitionend", onEnd);
         } else {
             // snap back
