@@ -1,0 +1,25 @@
+.info-container {
+
+    /*Placing*/
+    width: 100vw;
+    height: 100vh;
+
+    padding: 5rem 2.5rem;
+
+    /*Colors*/
+    color: var(--font-color);
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transform-origin: center center;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    user-select: none;
+    touch-action: none;
+
+
+}
+
