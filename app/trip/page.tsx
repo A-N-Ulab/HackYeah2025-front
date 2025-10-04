@@ -1,8 +1,9 @@
 'use client'
 
 import {store} from "@/app/api/store";
-import {useEffect} from "react";
+import {useEffect, useRef, useState} from "react";
 import TripCard from "@/app/components/TripCard";
+import DraggableHorizontal, {DraggableHandle} from "@/app/components/DraggableHorizontal";
 
 
 export default function Trip() {
@@ -14,10 +15,36 @@ export default function Trip() {
         }
     })
 
+    const SwipeUp = () => {
+        console.log("swiped up")
+    }
+
+    const SwipeLeft = () => {
+        console.log("swiped left")
+    }
+
+    const SwipeRight = () => {
+        console.log("swiped right")
+    }
+
     return (
         <div className="w-full h-full">
             <div className="container">
-                <TripCard key={storage.tripId} id={storage.tripId} />
+                <DraggableHorizontal
+                    onDrag={(x, y) => {}}
+                    onSwipe={(dir) => {
+                        if (dir === "up") {
+                            SwipeUp()
+                        } else if (dir === 1) {
+                            SwipeRight()
+                        } else if (dir === -1) {
+                            SwipeLeft()
+                        }
+                    }}
+                    onCancel={() => console.log("snap back — not a swipe")}
+                >
+                    <TripCard key={storage.tripId} id={storage.tripId} />
+                </DraggableHorizontal>
             </div>
         </div>
     )
