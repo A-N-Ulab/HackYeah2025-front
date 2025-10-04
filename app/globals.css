@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root{
-  --neutral-bg-color: #151515;
-  --neutral-h1-color: #d69610;
-  --neutral-confirm-color: #4f9356;
-  --neutral-decline-color: #c1564c;
-  --neutral-font-color: #2e2b26;
-  --card-bg: #775a2b;
+  --bg-color: #151515;
+  --accent-color: #E8BC5F;
+  --h1-color: #d69610;
+  --confirm-color: #4f9356;
+  --decline-color: #c1564c;
+  --font-color: #dfe0df;
 
   --font-press-start-2p: 'Press Start 2P', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
@@ -16,8 +16,7 @@ html, body, #root {
 }
 
 body {
-  background: var(--neutral-bg-color);
-  color: var(--neutral-font-color);
+  background: var(--bg-color);
   font-family: var(--font-press-start-2p);
   margin: 0;
   padding: 0;
@@ -32,7 +31,7 @@ body {
   cursor: grab;
   user-select: none;
   -webkit-user-drag: none;
-  touch-action: pan-y; /* allow vertical page scroll */
+  touch-action: pan-y;
   transition: transform 0s;
   transform-origin: center center;
 }
@@ -53,8 +52,8 @@ body {
 .trip-card-container {
   width: 30vw;
   height: 50vh;
-  background: var(--card-bg);
-  color: var(--neutral-font-color);
+  background: var(--accent-color);
+  color: var(--font-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,3 +69,51 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.input-base {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background-color: var(--font-color);
+  color: black;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  font-size: 13px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 20px 14px;
+  border-radius: 10px;
+  border: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+  font-family: var(--font-press-start-2p);
+}
+
+.error-text {
+  margin-top: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(161, 90, 82, 0.4);
+  border-radius: 6px;
+  padding: 6px 8px;
+  display: inline-block;
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 14px;
+  color: var(--accent-color);
+  opacity: 0.8;
+  animation: blink 1.2s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
+

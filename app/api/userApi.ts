@@ -1,7 +1,15 @@
-import {axiosInstance} from "@/app/api/axiosInstance";
+import { axiosInstance } from "@/app/api/axiosInstance"
 
+export const loginUserQuery = async (username: string, password: string) => {
+    try {
+        const response = await axiosInstance.post('/login', { username, password })
 
-export const login = async ({username, password}: { username: string, password: string}) => {
-    const response = await axiosInstance.post('/login', { username, password })
-    return response.data ? response.data : null
+        if (response.data.token) {
+            return response.data
+        } else {
+            return { error: "Something went wrong" }
+        }
+    } catch (error) {
+        return { error: "Wrong username or password" }
+    }
 }
