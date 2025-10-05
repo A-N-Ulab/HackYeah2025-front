@@ -3,10 +3,11 @@
 import DestinationsCard from "@/app/components/DestinationsCard"
 import DraggableHorizontal from "@/app/components/DraggableHorizontal"
 import Auth from "../hooks/Auth"
-import {getCookie} from "@/app/utils/cookies"
+import {deleteCookie, getCookie} from "@/app/utils/cookies"
 import {useEffect, useState} from "react"
 import {Destination} from "@/app/types/Destination"
 import {getDestinations, sendChoice} from "@/app/api/tripApi"
+import { useRouter } from "next/navigation";
 
 
 export default function Trip() {
@@ -17,6 +18,8 @@ export default function Trip() {
     const [currentDestination, setCurrentDestination] = useState<Destination | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
 
+    const router = useRouter()
+
     const loadDestinations = async (tripId: number) => {
         setLoading(true)
         try {
@@ -26,6 +29,9 @@ export default function Trip() {
                 setDestinations(resp.destinations)
                 setCurrentDestinationIdx(0)
                 setCurrentDestination(resp.destinations[0])
+            }else {
+                deleteCookie("tripId")
+                router.push("/")
             }
         } catch (err) {
             console.error(err)
@@ -89,7 +95,7 @@ export default function Trip() {
     })
 
     if (loading || !currentDestination)
-        return <p>Loading...</p>
+        return <p className="loading-text">Loading...</p>
 
     return (
         <Auth>

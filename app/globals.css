@@ -442,6 +442,12 @@ p {
   text-align: left;
 }
 
+.loading-text {
+  display: block;
+  text-align: center;
+  margin-top: 50vh;
+}
+
 /* ========================================
    Responsive Design
    ======================================== */

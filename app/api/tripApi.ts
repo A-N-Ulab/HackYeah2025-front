@@ -1,5 +1,5 @@
 import {axiosInstance} from "@/app/api/axiosInstance";
-import {getCookie} from "@/app/utils/cookies";
+import {getCookie, deleteCookie} from "@/app/utils/cookies";
 
 
 export const getAllTrips = async () => {
@@ -13,10 +13,11 @@ export const getDestinations = async (tripId: number) => {
     const response = await axiosInstance.post('/destinations', {
         "token": getCookie("Token"),
         "trip_id": tripId
+    }).catch(error => {
+        console.log(error)
     })
-    console.log(response)
-
-    return response.data || null
+    
+    return response?.data || null
 }
 
 export const createTrip = async (name: string, description: string) => {
