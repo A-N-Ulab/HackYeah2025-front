@@ -110,6 +110,8 @@ export default function Trip() {
                     >
                         <DestinationsCard key={currentDestination.id} destination={currentDestination} />
                     </DraggableHorizontal>
+                    <div className="bottomContainer">
+                    </div>
                 </div>
             </div>
         </Auth>

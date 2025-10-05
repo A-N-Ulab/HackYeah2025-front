@@ -136,7 +136,7 @@ body {
 }
 
 .trip-card {
-  background: var(--bg-color);
+  background: var(--font-color);
   border-radius: 12px;
   padding: 20px;
   border: 1px solid var(--accent-color);
@@ -321,4 +321,8 @@ body {
 
 p{
   color: var(--font-color);
+}
+
+.bottomContainer{
+  background: #000;
 }

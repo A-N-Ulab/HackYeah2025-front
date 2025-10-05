@@ -261,6 +261,7 @@ const DraggableHorizontal = forwardRef<DraggableHandle, Props>(function Draggabl
     return (
         <>
             <div className="bin" onClick={handleBinClick}>
+                <img src="./icons/redArrow.png"></img>
                 <img src="./icons/Trash.png"></img>
             </div>
                 <div
@@ -272,14 +273,15 @@ const DraggableHorizontal = forwardRef<DraggableHandle, Props>(function Draggabl
                     onPointerCancel={onPointerUp}
                     // NOTE: touchAction none prevents page vertical scroll while dragging.
                     style={{ touchAction: "none" }}
-                >
+                >   
                     {children}
                 </div>
+                
         
             <div className="backpac" onClick={handleBackpackClick}>
+                <img src="./icons/frrenArrow.png"></img>
                 <img src="./icons/accept.png"></img>
             </div>
-
         </>
     );
 });
