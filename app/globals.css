@@ -136,7 +136,7 @@ body {
 }
 
 .trip-card {
-  background: var(--font-color);
+  background-color: #151515 !important;
   border-radius: 12px;
   padding: 20px;
   border: 1px solid var(--accent-color);
