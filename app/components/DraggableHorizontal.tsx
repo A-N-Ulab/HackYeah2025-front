@@ -264,7 +264,7 @@ const DraggableHorizontal = forwardRef<DraggableHandle, Props>(function Draggabl
                 <img src="./icons/redArrow.png" alt="Decline" />
                 <img src="./icons/Trash.png" alt="Trash" />
             </div>
-            <div
+            <div      
                 ref={elRef}
                 className={`draggable-horizontal ${className}`}
                 onPointerDown={onPointerDown}

@@ -172,12 +172,35 @@
         margin: 0;
     }
     
+    /* Move draggable area to upper portion */
+    .draggable-horizontal {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    /* Position bin and backpack below the card horizontally */
     .bin {
-        left: 3%;
+        top: auto;
+        bottom: 5%;
+        left: 5%;
+        transform: none;
+    }
+    
+    .bin:hover {
+        transform: translateY(-4px);
     }
     
     .backpac {
-        right: 3%;
+        top: auto;
+        bottom: 5%;
+        right: 5%;
+        transform: none;
+    }
+    
+    .backpac:hover {
+        transform: translateY(-4px);
     }
     
     .bin img:first-child,
@@ -198,4 +221,19 @@
         font-size: 0.65rem;
         padding: 0.5rem;
     }
+   
+
+    .swipe-go-btn {
+      width: auto;
+    }
+
+    span.swipe {
+      font-size: 30px;
+    }
+    span.and {
+      font-size: 30px;
+    }
+    span.go {
+      font-size: 30px;
+    } 
 }
