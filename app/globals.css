@@ -1,19 +1,26 @@
 @import "tailwindcss";
 
-:root{
+/* ========================================
+   CSS Variables
+   ======================================== */
+:root {
   --bg-color: #151515;
   --accent-color: #E8BC5F;
   --h1-color: #d69610;
   --confirm-color: #4f9356;
   --decline-color: #c1564c;
   --font-color: #dfe0df;
-
+  
   --font-press-start-2p: 'Press Start 2P', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
+/* ========================================
+   Base Styles
+   ======================================== */
 html, body, #root {
   height: 100%;
-  margin: 0; height: 100%; overflow: hidden
+  margin: 0;
+  overflow: hidden;
 }
 
 body {
@@ -25,6 +32,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  color: var(--font-color);
+}
+
+/* ========================================
+   Layout Components
+   ======================================== */
+.container {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomContainer {
+  background: #000;
+}
+
+/* ========================================
+   Draggable Components
+   ======================================== */
 .draggable-horizontal {
   position: relative;
   display: block;
@@ -36,20 +67,10 @@ body {
   transition: transform 0s;
   transform-origin: center center;
 }
+
 .draggable-horizontal.dragging {
   cursor: grabbing;
 }
-
-.container {
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 
 .draggable-horizontal.show-like .action-indicator.like,
 .draggable-horizontal.show-dislike .action-indicator.dislike {
@@ -57,138 +78,55 @@ body {
   transform: translateY(0);
 }
 
+/* ========================================
+   Form Elements
+   ======================================== */
 .input-base {
   width: 100%;
   padding: 12px 14px;
   border-radius: 10px;
   background-color: var(--font-color);
-  color: black;
+  color: #000;
   outline: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   font-size: 13px;
 }
 
+/* ========================================
+   Buttons
+   ======================================== */
 .btn-primary {
   display: inline-block;
   padding: 20px 14px;
-
-  margin-top: .5rem;
-
+  margin-top: 0.5rem;
+  
   border-radius: 10px;
   border: 2px solid var(--accent-color);
+  background: transparent;
+  
   color: var(--accent-color);
   font-weight: 600;
-  cursor: pointer;
-  transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
   font-family: var(--font-press-start-2p);
-}
-
-.error-text {
-  margin-top: 8px;
-  text-align: center;
-  font-size: 14px;
-  color: rgba(161, 90, 82, 0.4);
-  border-radius: 6px;
-  padding: 6px 8px;
-  display: inline-block;
-}
-
-.loading-text {
-  text-align: center;
-  font-size: 14px;
-  color: var(--accent-color);
-  opacity: 0.8;
-  animation: blink 1.2s infinite ease-in-out;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 0.8; }
-  50% { opacity: 0.3; }
-}
-
-
-
-.trips-root {
-  min-height: 100vh;
-  background: var(--bg-color);
-  color: var(--font-color);
-  padding: 40px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.trips-header {
-  font-size: 24px;
-  color: var(--h1-color);
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  letter-spacing: 1px;
-}
-
-.trips-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 30px;
-  width: 100%;
-  max-width: 1000px;
-}
-
-.trip-card {
-  background-color: #151515 !important;
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid var(--accent-color);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  transition: transform 0.15s ease, box-shadow 0.2s ease;
+  
   cursor: pointer;
-}
-
-.trip-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.35);
-}
-
-.trip-card h2 {
-  font-size: 12px;
-  color: var(--h1-color);
-  margin-bottom: 10px;
-}
-
-.trip-card p {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.4;
-}
-
-.loading {
-  font-size: 12px;
-  color: rgba(255,255,255,0.6);
-  text-align: center;
-  margin-top: 40px;
-  letter-spacing: 1px;
-}
-
-.no-trips {
-  color: rgba(255,255,255,0.5);
-  font-size: 11px;
-  text-align: center;
-  margin-top: 40px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.12s ease;
 }
 
 .btn-new-trip {
   padding: 14px 100px;
+  
   border-radius: 10px;
   border: 2px solid var(--h1-color);
   background: transparent;
+  
   color: var(--h1-color);
-  cursor: pointer;
   font-size: 14px;
-  transition: all 0.15s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
+  
+  cursor: pointer;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  transition: all 0.15s ease;
 }
 
 .btn-new-trip:hover {
@@ -203,15 +141,162 @@ body {
   box-shadow: none;
 }
 
+.btn-ghost {
+  padding: 10px 14px;
+  
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+  
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.btn-primary-modal {
+  padding: 10px 14px;
+  
+  border-radius: 8px;
+  border: 2px solid var(--h1-color);
+  background: var(--h1-color);
+  
+  color: #081014;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.btn-primary-modal:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ========================================
+   Feedback Messages
+   ======================================== */
+.error-text {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 8px;
+  
+  border-radius: 6px;
+  
+  color: rgba(161, 90, 82, 0.4);
+  font-size: 14px;
+  text-align: center;
+}
+
+.loading-text {
+  font-size: 14px;
+  color: var(--accent-color);
+  text-align: center;
+  opacity: 0.8;
+  animation: blink 1.2s infinite ease-in-out;
+}
+
+.loading {
+  margin-top: 40px;
+  
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.no-trips {
+  margin-top: 40px;
+  
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  text-align: center;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.3; }
+}
+
+/* ========================================
+   Trips Section
+   ======================================== */
+.trips-root {
+  min-height: 100vh;
+  padding: 40px 20px;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  background: var(--bg-color);
+  color: var(--font-color);
+}
+
+.trips-header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+  font-size: 24px;
+  color: var(--h1-color);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.trips-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.trip-card {
+  padding: 20px;
+  
+  background-color: #151515 !important;
+  border: 1px solid var(--accent-color);
+  border-radius: 12px;
+  
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+.trip-card h2 {
+  margin-bottom: 10px;
+  
+  font-size: 12px;
+  color: var(--h1-color);
+}
+
+.trip-card p {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+/* ========================================
+   Modal Components
+   ======================================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.55);
+  z-index: 1000;
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-  animation: modalFade .12s ease;
+  
+  background: rgba(0, 0, 0, 0.55);
+  animation: modalFade 0.12s ease;
 }
 
 @keyframes modalFade {
@@ -222,11 +307,13 @@ body {
 .modal {
   width: 92%;
   max-width: 520px;
-  background: linear-gradient(180deg, rgba(28,28,28,0.98), rgba(18,18,18,0.98));
-  border-radius: 12px;
   padding: 18px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.03);
+  
+  background: linear-gradient(180deg, rgba(28, 28, 28, 0.98), rgba(18, 18, 18, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   color: var(--font-color);
 }
 
@@ -239,21 +326,28 @@ body {
 }
 
 .modal-title {
+  margin: 0;
   font-size: 14px;
   color: var(--h1-color);
-  margin: 0;
 }
 
 .modal-close {
+  padding: 6px;
+  
   background: transparent;
   border: none;
-  color: rgba(255,255,255,0.7);
+  border-radius: 6px;
+  
+  color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
   cursor: pointer;
-  padding: 6px;
-  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
 }
-.modal-close:hover { background: rgba(255,255,255,0.02); color: var(--h1-color); }
+
+.modal-close:hover {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--h1-color);
+}
 
 .modal-form {
   display: flex;
@@ -261,16 +355,19 @@ body {
   gap: 12px;
 }
 
-.modal-input, .modal-textarea {
+.modal-input,
+.modal-textarea {
   width: 100%;
   padding: 12px 14px;
+  
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 10px;
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.04);
+  
   color: var(--font-color);
-  outline: none;
   font-size: 13px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  outline: none;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .modal-textarea {
@@ -278,7 +375,6 @@ body {
   resize: vertical;
 }
 
-/* actions */
 .modal-actions {
   display: flex;
   gap: 12px;
@@ -286,43 +382,23 @@ body {
   margin-top: 4px;
 }
 
-.btn-ghost {
-  padding: 10px 14px;
-  border-radius: 8px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.04);
-  color: rgba(255,255,255,0.8);
-  cursor: pointer;
-}
-.btn-ghost:hover { background: rgba(255,255,255,0.02); }
-
-.btn-primary-modal {
-  padding: 10px 14px;
-  border-radius: 8px;
-  border: 2px solid var(--h1-color);
-  background: var(--h1-color);
-  color: #081014;
-  font-weight: 700;
-  cursor: pointer;
-}
-.btn-primary-modal:disabled { opacity: 0.6; cursor: not-allowed; }
-
 .modal-error {
+  margin-top: 4px;
+  
   color: var(--decline-color);
   font-size: 12px;
   text-align: left;
-  margin-top: 4px;
 }
 
+/* ========================================
+   Responsive Design
+   ======================================== */
 @media (max-width: 480px) {
-  .modal { padding: 14px; }
-  .modal-title { font-size: 13px; }
-}
-
-p{
-  color: var(--font-color);
-}
-
-.bottomContainer{
-  background: #000;
+  .modal {
+    padding: 14px;
+  }
+  
+  .modal-title {
+    font-size: 13px;
+  }
 }
