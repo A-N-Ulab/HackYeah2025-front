@@ -1,25 +1,14 @@
-'use client';
+'use client'
 
-import React from "react"
-import { text } from "stream/consumers"
-import { useRouter } from "next/navigation";
 import {useState, useEffect} from "react"
 import {Trip} from "@/app/types/Trip"
 import Auth from "@/app/hooks/Auth"
 import {getAllTrips} from "@/app/api/tripApi"
 import {createTrip} from "@/app/api/tripApi"
+import {useRouter} from "next/navigation"
 import {setCookie} from "@/app/utils/cookies"
 
-export function MenuButton({text}:{text:string}) {
-    const router = useRouter()
-
-    return (
-        <button onClick={() => router.push("/saved")} className="btn-menu">{text}</button>
-    )
-
-}
-
-export function SwipeGoButton({swipe, and, Go}:{swipe:string, and:string, Go:string}) {
+export default function Trips() {
     const [trips, setTrips] = useState<Trip[]>([])
     const [loading, setLoading] = useState<boolean>(true)
     const [modalOpen, setModalOpen] = useState<boolean>(false)
@@ -28,59 +17,79 @@ export function SwipeGoButton({swipe, and, Go}:{swipe:string, and:string, Go:str
     const [creating, setCreating] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
     const router = useRouter()
-    
-    const GetAllTrips = async () => {
-            setLoading(true)
-            try {
-                const resp = await getAllTrips()
-                console.log("getAllTrips resp:", resp)
-                if (resp?.trips?.length > 0) {
-                    setTrips(resp.trips)
-                } else {
-                    setTrips([])
-                }
-            } catch (err) {
-                console.error(err)
-                setTrips([])
-            } finally {
-                setLoading(false)
-            }
-        }
-    
-        useEffect(() => {
-            GetAllTrips()
-        }, [])
-    
-        const onClickTrip = async (id: number) => {
-            setCookie("tripId", id.toString())
-            router.push('/trip')
-        }
-    
-        const openModal = () => {
-            setError(null)
-            setName("")
-            setDescription("")
-            setModalOpen(true)
-        }
-    
-        const closeModal = () => {
-            setModalOpen(false)
-        }
-    
-        const handleCreate = async () => {
-            const resp = await createTrip(name, description)
-            if (resp.id) {
-                setCookie("tripId", resp.id.toString())
-                setModalOpen(false)
-                router.push("/trip")
 
+    const GetAllTrips = async () => {
+        setLoading(true)
+        try {
+            const resp = await getAllTrips()
+            console.log("getAllTrips resp:", resp)
+            if (resp?.trips?.length > 0) {
+                setTrips(resp.trips)
+            } else {
+                setTrips([])
             }
+        } catch (err) {
+            console.error(err)
+            setTrips([])
+        } finally {
+            setLoading(false)
         }
+    }
+
+    useEffect(() => {
+        GetAllTrips()
+    }, [])
+
+    const onClickTrip = async (id: number) => {
+        setCookie("tripId", id.toString())
+        router.push('/trip')
+    }
+
+    const openModal = () => {
+        setError(null)
+        setName("")
+        setDescription("")
+        setModalOpen(true)
+    }
+
+    const closeModal = () => {
+        setModalOpen(false)
+    }
+
+    const handleCreate = async () => {
+        const resp = await createTrip(name, description)
+        if (resp.id) {
+            setModalOpen(false)
+            GetAllTrips()
+        }
+    }
 
     return (
-        <div>
-            <button onClick={openModal} className="swipe-go-btn"><span className="swipe">{swipe}</span><span className="and">{and}</span><span className="go">{Go}</span></button>
-            {modalOpen && (
+        <Auth>
+            <div className="trips-root">
+                {/* <div>
+                    <button className="btn-new-trip" onClick={openModal}>New trip</button>
+                </div> */}
+                <div className="trips-header" style={{alignItems: 'center', justifyContent: 'space-between', display: 'flex', width: '100%'}}>
+                    <h2 className="trips-header m-auto">Saved Trips</h2>
+                </div>
+
+                {loading ? (
+                    <p className="loading">Loading trips...</p>
+                ) : trips.length === 0 ? (
+                    <p className="no-trips">No trips found</p>
+                ) : (
+                    <div className="trips-container">
+                        {trips.map((trip) => (
+                            <div key={trip.id} className="trip-card" onClick={() => onClickTrip(trip.id)}>
+                                <h2>{trip.name}</h2>
+                                <p>{trip.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {modalOpen && (
                     <div className="modal-overlay" role="dialog" aria-modal="true">
                         <div className="modal">
                             <div className="modal-header">
@@ -116,14 +125,7 @@ export function SwipeGoButton({swipe, and, Go}:{swipe:string, and:string, Go:str
                         </div>
                     </div>
                 )}
-        </div>
+            </div>
+        </Auth>
     )
-}
-
-export function InfoButton({text}:{text:any}) {
-    const router = useRouter()
-    return (
-        <button onClick={() => router.push("/info")} className="info-btn">{text}</button>
-    )
-
 }
