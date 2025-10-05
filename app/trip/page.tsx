@@ -8,33 +8,6 @@ import {useEffect, useState} from "react"
 import {Destination} from "@/app/types/Destination"
 import {getDestination} from "@/app/api/tripApi"
 
-const destinations_test = [
-    {
-        "description": "Opis1",
-        "id": 1,
-        "name": "Test1",
-        "photo_name": "test.png"
-    },
-    {
-        "description": "Opis2",
-        "id": 2,
-        "name": "Test2",
-        "photo_name": "test.png"
-    },
-    {
-        "description": "Opis3",
-        "id": 3,
-        "name": "Test3",
-        "photo_name": "test.png"
-    },
-    {
-        "description": "Opis4",
-        "id": 4,
-        "name": "Test4",
-        "photo_name": "test.png"
-    }
-]
-
 
 export default function Trip() {
     const [tripId, setTripId] = useState<number>(-1)
