@@ -16,8 +16,8 @@ export default function Home() {
             <div className="menu-container">
                 
                 <SwipeGoButton swipe="SWIPE" and="&" Go="GO"/>
-                <MenuButton text="Saved"/>
-                <MenuButton text="Plan"/>
+                <MenuButton menus="/saved" text="Saved"/>
+                <MenuButton menus="/planning" text="Plan"/>
                 <InfoButton text={<img  className="info-icon" src="./icons/infoYellow.png" alt="Info" />} />
             </div>
             

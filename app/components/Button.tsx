@@ -10,11 +10,11 @@ import {getAllTrips} from "@/app/api/tripApi"
 import {createTrip} from "@/app/api/tripApi"
 import {setCookie} from "@/app/utils/cookies"
 
-export function MenuButton({text}:{text:string}) {
+export function MenuButton({text,menus}:{text:string,menus:string}) {
     const router = useRouter()
 
     return (
-        <button onClick={() => router.push("/saved")} className="btn-menu">{text}</button>
+        <button onClick={() => router.push(menus)} className="btn-menu">{text}</button>
     )
 
 }
