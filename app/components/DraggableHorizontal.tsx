@@ -251,7 +251,9 @@ const DraggableHorizontal = forwardRef<DraggableHandle, Props>(function Draggabl
     };
 
     return (
-        <div
+        <>
+            <div className="bin"><img src="./icons/Trash.png"></img></div>
+                <div
             ref={elRef}
             className={`draggable-horizontal ${className}`}
             onPointerDown={onPointerDown}
@@ -260,9 +262,13 @@ const DraggableHorizontal = forwardRef<DraggableHandle, Props>(function Draggabl
             onPointerCancel={onPointerUp}
             // NOTE: touchAction none prevents page vertical scroll while dragging.
             style={{ touchAction: "none" }}
-        >
+                >
             {children}
-        </div>
+                </div>
+        
+            <div className="backpac"><img src="./icons/accept.png"></img></div>
+
+        </>
     );
 });
 
