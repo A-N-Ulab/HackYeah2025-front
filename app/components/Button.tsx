@@ -1,3 +1,4 @@
+import React from "react"
 import { text } from "stream/consumers"
 
 export function MenuButton({text}:{text:string}) {
@@ -15,4 +16,12 @@ export function SwipeGoButton({swipe, and, Go}:{swipe:string, and:string, Go:str
     return (
         <button className="swipe-go-btn"><span className="swipe">{swipe}</span><span className="and">{and}</span><span className="go">{Go}</span></button>
     )
+}
+
+export function InfoButton({text}:{text:any}) {
+
+    return (
+        <button className="info-btn">{text}</button>
+    )
+
 }
