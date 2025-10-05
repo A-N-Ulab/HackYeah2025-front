@@ -111,6 +111,9 @@ export default function Trip() {
                         <DestinationsCard key={currentDestination.id} destination={currentDestination} />
                     </DraggableHorizontal>
                     <div className="bottomContainer">
+                        <img src="/icons/UpArrow.png" alt="Up Arrow" className="up-arrow" />
+                        <img src="/icons/GO_icon.png" alt="Go" className="go-icon" />
+                        <img src="/icons/UpArrow.png" alt="Up Arrow" className="up-arrow" />
                     </div>
                 </div>
             </div>

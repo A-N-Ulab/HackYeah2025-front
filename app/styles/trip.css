@@ -25,15 +25,59 @@
 /* Action icons (bin and backpack) */
 .bin,
 .backpac {
-    width: 5rem;
-    margin: 2.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    z-index: 10;
 }
 
-.bin:hover,
+/* Bin positioned on the left - further from card */
+.bin {
+    left: 15%;
+}
+
+.bin:hover {
+    transform: translateY(-50%) translateX(-6px);
+}
+
+/* Backpack positioned on the right - further from card */
+.backpac {
+    right: 15%;
+}
+
 .backpac:hover {
-    transform: translateY(-4px);
+    transform: translateY(-50%) translateX(6px);
+}
+
+/* Arrow images - larger */
+.bin img:first-child,
+.backpac img:first-child {
+    width: 5rem;
+    height: auto;
+    transition: filter 0.2s ease;
+    filter: brightness(1.1);
+}
+
+/* Icon images below arrows - smaller */
+.bin img:last-child,
+.backpac img:last-child {
+    width: 3.5rem;
+    height: auto;
+    transition: filter 0.2s ease;
+    filter: brightness(1.1);
+}
+
+.bin:hover img,
+.backpac:hover img {
+    filter: brightness(1.5);
 }
 
 /* Card content grid */
@@ -102,9 +146,22 @@
 
 /* Responsive design */
 @media (max-width: 900px) {
-    .bin,
+    .bin {
+        left: 12%;
+    }
+    
     .backpac {
-        margin: 1.5rem auto;
+        right: 12%;
+    }
+    
+    .bin img:first-child,
+    .backpac img:first-child {
+        width: 4rem;
+    }
+    
+    .bin img:last-child,
+    .backpac img:last-child {
+        width: 3rem;
     }
 }
 
@@ -115,10 +172,22 @@
         margin: 0;
     }
     
-    .bin,
+    .bin {
+        left: 3%;
+    }
+    
     .backpac {
-        width: 4rem;
-        margin: 1rem auto;
+        right: 3%;
+    }
+    
+    .bin img:first-child,
+    .backpac img:first-child {
+        width: 3rem;
+    }
+    
+    .bin img:last-child,
+    .backpac img:last-child {
+        width: 2.5rem;
     }
     
     .card-header .trip-title {
