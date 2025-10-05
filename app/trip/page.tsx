@@ -108,9 +108,7 @@ export default function Trip() {
                     <DraggableHorizontal
                         onDrag={(x, y) => {}}
                         onSwipe={(dir) => {
-                            if (dir === "up") {
-                                SwipeUp()
-                            } else if (dir === 1) {
+                            if (dir === 1) {
                                 Swipe(true)
                             } else if (dir === -1) {
                                 Swipe(false)

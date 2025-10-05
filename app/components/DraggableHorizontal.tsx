@@ -122,13 +122,13 @@ const DraggableHorizontal = forwardRef<DraggableHandle, Props>(function Draggabl
     const move = (clientX: number, clientY: number) => {
         if (!state.current.dragging) return;
         const dx = clientX - state.current.startX;
-        const dy = clientY - state.current.startY;
+        // const dy = clientY - state.current.startY;
 
-        // block dragging downwards: allow dy only if <= 0 (upwards) OR allow small positive for natural movement?
-        const allowedDy = dy <= 0 ? dy : 0;
+        // // block dragging downwards: allow dy only if <= 0 (upwards) OR allow small positive for natural movement?
+        // const allowedDy = dy <= 0 ? dy : 0;
 
         state.current.translateX = dx;
-        state.current.translateY = allowedDy;
+        // state.current.translateY = allowedDy;
 
         if (!state.current.raf) {
             state.current.raf = requestAnimationFrame(() => {
