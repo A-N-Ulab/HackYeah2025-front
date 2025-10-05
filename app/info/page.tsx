@@ -7,6 +7,9 @@ export default function InfoPage() {
 
     return (
         <div className="info-container">
+            <a href="/" className="hamburger-menu">
+                <img src="/icons/UpArrow.png" alt="Menu" />
+            </a>
            <img src="./icons/Logo_wide_version.png" alt="Info" />
 
         <div className="info-content">

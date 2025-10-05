@@ -67,6 +67,9 @@ export default function Trips() {
     return (
         <Auth>
             <div className="trips-root">
+                <a href="/" className="hamburger-menu">
+                    <img src="/icons/UpArrow.png" alt="Menu" />
+                </a>
                 <div className="trips-header" style={{alignItems: 'center', justifyContent: 'space-between', display: 'flex', width: '100%'}}>
                     <h2 className="trips-header m-auto">Plan trip</h2>
                 </div>

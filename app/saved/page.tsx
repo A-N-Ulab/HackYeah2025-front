@@ -67,6 +67,9 @@ export default function Trips() {
     return (
         <Auth>
             <div className="trips-root">
+                <a href="/" className="hamburger-menu">
+                    <img src="/icons/UpArrow.png" alt="Menu" />
+                </a>
                 {/* <div>
                     <button className="btn-new-trip" onClick={openModal}>New trip</button>
                 </div> */}

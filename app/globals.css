@@ -105,6 +105,36 @@ p {
   filter: brightness(1.5);
 }
 
+/* Hamburger menu (rotated up arrow) */
+.hamburger-menu {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  
+  width: 3rem;
+  height: 3rem;
+  
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.hamburger-menu img {
+  width: 100%;
+  height: 100%;
+  filter: brightness(1.1);
+  transition: filter 0.2s ease;
+  transform: rotate(90deg);
+}
+
+.hamburger-menu:hover {
+  transform: scale(1.1);
+}
+
+.hamburger-menu:hover img {
+  filter: brightness(1.5);
+}
+
 /* ========================================
    Draggable Components
    ======================================== */
@@ -456,6 +486,14 @@ p {
   .container {
     align-items: flex-start;
     padding-top: 2rem;
+  }
+  
+  /* Hamburger menu - adjust for mobile */
+  .hamburger-menu {
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
   
   /* Move bottom container higher to be visible */
