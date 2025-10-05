@@ -71,7 +71,7 @@ export default function Trips() {
                     <img src="/icons/UpArrow.png" alt="Menu" />
                 </a>
                 <div className="trips-header" style={{alignItems: 'center', justifyContent: 'space-between', display: 'flex', width: '100%'}}>
-                    <h2 className="trips-header m-auto">Plan trip</h2>
+                    <h2 className="trips-header m-auto">Zaplanuj podróż</h2>
                 </div>
             </div>
         </Auth>
