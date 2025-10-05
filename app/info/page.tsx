@@ -22,9 +22,7 @@ export default function InfoPage() {
 
                 <p>Przesuń w lewo: Pomiń miejsce i przejdź do następnej propozycji.</p>
 
-                <p>Przesuń w dół: Otwórz panel szczegółów, aby przeczytać więcej informacji, takich jak adres i godziny otwarcia.</p>
-
-                <p>Przesuń w górę: Rozpocznij nawigację do miejsca natychmiast.</p>
+                <p>Przycisk GO: Rozpocznij nawigację do miejsca natychmiast.</p>
             </div>
             <div className="info-text">Tam, gdzie diabeł mówi dobranoc</div>
         </div>
