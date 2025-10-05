@@ -65,7 +65,7 @@ export default function Login() {
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            placeholder="username"
+                            placeholder="username is demo"
                             required
                             className="input-base"
                         />
@@ -76,7 +76,7 @@ export default function Login() {
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="password"
+                            placeholder="password is demo"
                             required
                             className="input-base"
                         />
@@ -96,7 +96,7 @@ export default function Login() {
                             className="w-full mt-2 btn-primary"
                             disabled={isLoading}
                         >
-                            {isLoading ? "Logging..." : "Login"}
+                            {isLoading ? "Logging..." : "Log in"}
                         </button>
                     </form>
                 </div>

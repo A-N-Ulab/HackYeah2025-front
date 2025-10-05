@@ -84,6 +84,9 @@ body {
 .btn-primary {
   display: inline-block;
   padding: 20px 14px;
+
+  margin-top: .5rem;
+
   border-radius: 10px;
   border: 2px solid var(--accent-color);
   color: var(--accent-color);
@@ -368,3 +371,6 @@ body {
   .modal-title { font-size: 13px; }
 }
 
+p{
+  color: var(--font-color);
+}

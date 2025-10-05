@@ -1,0 +1,110 @@
+.menu-container {
+
+    /*Placing*/
+    width: 100vw;
+    height: 100vh;
+
+    padding: 5rem 2.5rem;
+
+    /*Colors*/
+    color: var(--font-color);
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transform-origin: center center;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    user-select: none;
+    touch-action: none;
+
+
+}
+
+
+.btn-menu {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    font-size: 2rem;
+
+    margin-top: 0.75rem;
+
+
+    width: 15rem;
+    border-radius: 10px;
+    border: 2px solid var(--h1-color);
+    color: var(--accent-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    font-family: var(--font-press-start-2p);
+}
+.btn-menu:hover {
+    transform: scale(1.05);
+    transform: rotate(5deg);
+    transition-duration: 0.2s;
+}
+
+.swipe-go-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+
+    margin: 0;
+    text-align: center;
+
+
+    width: 30rem;
+
+    border-radius: 10px;
+    border: 2px solid var(--h1-color);
+    color: var(--accent-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    font-family: var(--font-press-start-2p);
+}
+.swipe-go-btn:hover {
+    transform: scale(1.05);
+    transform: rotate(5deg);
+    transition-duration: 0.2s;
+}
+
+
+span.swipe {
+    color: var(--confirm-color);
+    font-size: 3rem;
+}
+
+span.and {
+    color: var(--decline-color);
+    font-size: 2.5rem;
+}
+
+span.go {
+    color: var(--h1-color);
+    font-size: 3rem;
+}
+.info-btn{
+     border-radius: 10px;
+    border: 2px solid var(--h1-color);
+    position: absolute;
+    bottom: 0.5rem;
+    padding: 0.5rem;
+    bottom: 2.5rem;
+    
+    height: 3.5rem;
+}
+.info-btn:hover{
+    transform: scale(1.05);
+    transform: rotate(360deg);
+    transition-duration: 0.5s;
+}
+
+
+.info-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
