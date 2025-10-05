@@ -20,6 +20,47 @@
     user-select: none;
     touch-action: none;
 
+    font-size: 0.70rem;
+
 
 }
 
+img{
+    width: 60vw;
+    height: auto;
+    margin-bottom: 2rem;
+}
+
+.info-text{
+    
+    padding: 2.5em;
+    font-size: 0.5em;
+
+    width: 40vw;
+
+    border: 0.125em solid var(--font-color);
+    border-radius: 0.25em;
+
+}
+
+.info-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: var(--h1-color);
+    letter-spacing: 0.05em;
+}
+
+p
+{
+    font-size: 1em;
+    line-height: 1.25em;
+    color: var(--font-color);
+    margin-bottom: 0.75em;
+}
