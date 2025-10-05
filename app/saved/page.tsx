@@ -3,7 +3,7 @@
 import {useState, useEffect} from "react"
 import {Trip} from "@/app/types/Trip"
 import Auth from "@/app/hooks/Auth"
-import {getAllTrips} from "@/app/api/tripApi"
+import {getAllTrips, deleteTripInDB} from "@/app/api/tripApi"
 import {createTrip} from "@/app/api/tripApi"
 import {useRouter} from "next/navigation"
 import {setCookie} from "@/app/utils/cookies"
@@ -45,6 +45,11 @@ export default function Trips() {
         router.push('/trip')
     }
 
+    const onDeleteTrip = async (id: number) => {
+        await deleteTripInDB(id)
+        GetAllTrips()
+    }
+
     const openModal = () => {
         setError(null)
         setName("")
@@ -84,9 +89,14 @@ export default function Trips() {
                 ) : (
                     <div className="trips-container">
                         {trips.map((trip) => (
-                            <div key={trip.id} className="trip-card" onClick={() => onClickTrip(trip.id)}>
-                                <h2>{trip.name}</h2>
-                                <p>{trip.description}</p>
+                            <div key={trip.id} className="trip-card">
+                                <div className="trip-name-description-wrapper" onClick={() => onClickTrip(trip.id)}>
+                                    <h2>{trip.name}</h2>
+                                    <p>{trip.description}</p>
+                                </div>
+                                <div className="delete-trip-btn" onClick={() => onDeleteTrip(trip.id)}>
+                                    <img src="/icons/Trash.png"></img>
+                                </div>
                             </div>
                         ))}
                     </div>

@@ -40,3 +40,12 @@ export const sendChoice = async (tripId: number, destinationId: number, choice: 
 
     return response.data || null
 }
+
+export const deleteTripInDB = async (tripId: number) => {
+    const response = await axiosInstance.post("/delete_trip", {
+        "token": getCookie("Token"),
+        "id": tripId,
+    })
+
+    return response.data || null
+}
