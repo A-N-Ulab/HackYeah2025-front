@@ -86,10 +86,18 @@ span.go {
     color: var(--h1-color);
     font-size: 1.5rem;
 }
+.info-btn{
+    position: absolute;
+    bottom: 0.5rem;
+    padding: 0.5rem;
+    bottom: 2.5rem;
+    
+    height: 3.5rem;
+}
+
 
 .info-icon {
-    position: absolute;
-    bottom: 2.5rem;
-    height: 2.5rem;
-    margin-top: 0.75rem;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
