@@ -46,6 +46,7 @@ export default function Trip() {
 
     const SwipeUp = () => {
         console.log("swiped up")
+        
     }
 
     const Swipe = (dir: boolean) => {
