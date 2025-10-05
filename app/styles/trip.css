@@ -129,3 +129,20 @@ grid-template-rows: 1fr 4fr 2fr;
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.4);
 }
+
+@media (max-width: 900px) {
+  .bin, .backpac {
+    margin: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .trip-card-container {
+    margin-top: 0;
+    width: 100vw;
+  } 
+  .container {
+    margin: 0;
+  }
+
+}
