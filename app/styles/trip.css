@@ -16,17 +16,18 @@ padding: 0.75rem 0.75rem 1rem 0.75rem ;
   width: 30rem;
 }
 
-.bin{
-  margin: 2.5rem;
-  width: 5rem;
-  cursor: pointer;
-}
-
+.bin,
 .backpac{
   margin: 2.5rem;
   width: 5rem;
   cursor: pointer;
+  transition: transform .2s;
 }
+
+.bin:hover, .backpac:hover {
+  transform: translateY(-4px);
+}
+
 
 .card-content {
 border-radius: 0.125rem;
@@ -122,4 +123,24 @@ grid-template-rows: 1fr 4fr 2fr;
 .trip-card-container:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+<<<<<<< HEAD
+=======
+}
+
+@media (max-width: 900px) {
+  .bin, .backpac {
+    margin: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .trip-card-container {
+    margin-top: 0;
+    width: 100vw;
+  } 
+  .container {
+    margin: 0;
+  }
+
+>>>>>>> a10727dbb78f73fcb7150dec271ec2d737114a42
 }
