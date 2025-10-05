@@ -20,13 +20,13 @@
     user-select: none;
     touch-action: none;
 
-    font-size: 0.70rem;
+    font-size: 1.25rem;
 
 
 }
 
 img{
-    width: 60vw;
+    width: 25rem;
     height: auto;
     margin-bottom: 2rem;
 }
@@ -47,6 +47,7 @@ img{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1em;
+    height: 50vh;
 }
 
 h1 {
