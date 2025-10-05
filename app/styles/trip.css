@@ -21,17 +21,18 @@ background: var(--accent-color);
   width: 30rem;
 }
 
-.bin{
-  margin: 2.5rem;
-  width: 5rem;
-  cursor: pointer;
-}
-
+.bin,
 .backpac{
   margin: 2.5rem;
   width: 5rem;
   cursor: pointer;
+  transition: transform .2s;
 }
+
+.bin:hover, .backpac:hover {
+  transform: translateY(-4px);
+}
+
 
 .card-content {
 border-radius: 0.125rem;
