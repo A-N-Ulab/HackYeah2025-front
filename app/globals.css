@@ -109,7 +109,7 @@ p {
 .hamburger-menu {
   position: absolute;
   top: 1.5rem;
-  right: 1.5rem;
+  left: 1.5rem;
   z-index: 100;
   
   width: 3rem;
@@ -124,7 +124,7 @@ p {
   height: 100%;
   filter: brightness(1.1);
   transition: filter 0.2s ease;
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 .hamburger-menu:hover {
