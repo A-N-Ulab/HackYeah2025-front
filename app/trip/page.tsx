@@ -48,10 +48,10 @@ export default function Trip() {
         console.log("swiped up")
     }
 
-    const Swipe = (dir: boolean) => {
+    const Swipe = async (dir: boolean) => {
         if (!currentDestination || !destinations) return
 
-        const resp = sendChoice(tripId, currentDestination?.id || -1, dir)
+        const resp = await sendChoice(tripId, currentDestination?.id || -1, dir)
         console.log(resp)
 
         if (currentDestinationIdx + 1 >= destinations.length) {
