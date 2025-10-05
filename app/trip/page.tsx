@@ -49,10 +49,10 @@ export default function Trip() {
         
     }
 
-    const Swipe = (dir: boolean) => {
+    const Swipe = async (dir: boolean) => {
         if (!currentDestination || !destinations) return
 
-        const resp = sendChoice(tripId, currentDestination?.id || -1, dir)
+        const resp = await sendChoice(tripId, currentDestination?.id || -1, dir)
         console.log(resp)
 
         if (currentDestinationIdx + 1 >= destinations.length) {
@@ -65,6 +65,28 @@ export default function Trip() {
             setCurrentDestination(destinations[currentDestinationIdx + 1])
         }
     }
+
+    const onKeyDown = (event: any) => {
+        switch(event.key) {
+            case "ArrowLeft":
+                Swipe(false);
+                break;
+            case "ArrowRight":
+                Swipe(true);
+                break;
+            case "ArrowUp":
+                SwipeUp();
+                break;
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("keydown", onKeyDown)
+
+        return () => {
+            window.removeEventListener("keydown", onKeyDown)
+        }
+    })
 
     if (loading || !currentDestination)
         return <p>Loading...</p>
