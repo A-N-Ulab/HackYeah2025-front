@@ -3,6 +3,7 @@ import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import "./styles/menu.css"
 import "./styles/info.css"
+import "./styles/trip.css"
 
 const pressStart2P = Press_Start_2P({
     weight: "400",

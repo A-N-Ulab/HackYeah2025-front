@@ -2,20 +2,16 @@
 
 import {useEffect} from "react";
 import {Destination} from "@/app/types/Destination";
+import TripImage from "./TripImage";
 
 export default function DestinationsCard({destination}: {destination: Destination}) {
 
-    useEffect(() => {
-        // console.log("dest: ", destination)
-    }, [])
-
-    if (!destination) return null
 
     return (
         <div className="trip-card-container">
             <p className="trip-title">{destination.name}</p>
             <div className="trip-image">
-                Image
+                <TripImage destination={destination} />
             </div>
         </div>
     )
