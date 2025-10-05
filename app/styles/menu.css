@@ -27,12 +27,12 @@
 .btn-menu {
     display: inline-block;
     padding: 1rem 2.5rem;
-    font-size: 0.75rem;
+    font-size: 2rem;
 
     margin-top: 0.75rem;
 
 
-    width: 10rem;
+    width: 15rem;
     border-radius: 10px;
     border: 2px solid var(--h1-color);
     color: var(--accent-color);
@@ -55,7 +55,7 @@
     text-align: center;
 
 
-    width: 15rem;
+    width: 30rem;
 
     border-radius: 10px;
     border: 2px solid var(--h1-color);
@@ -74,17 +74,17 @@
 
 span.swipe {
     color: var(--confirm-color);
-    font-size: 1.25rem;
+    font-size: 3rem;
 }
 
 span.and {
     color: var(--decline-color);
-    font-size: 1rem;
+    font-size: 2.5rem;
 }
 
 span.go {
     color: var(--h1-color);
-    font-size: 1.5rem;
+    font-size: 3rem;
 }
 
 .info-icon {
