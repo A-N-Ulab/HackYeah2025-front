@@ -46,6 +46,7 @@ export default function Trip() {
 
     const SwipeUp = () => {
         console.log("swiped up")
+        
     }
 
     const Swipe = async (dir: boolean) => {
@@ -109,6 +110,8 @@ export default function Trip() {
                     >
                         <DestinationsCard key={currentDestination.id} destination={currentDestination} />
                     </DraggableHorizontal>
+                    <div className="bottomContainer">
+                    </div>
                 </div>
             </div>
         </Auth>

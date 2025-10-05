@@ -1,15 +1,10 @@
-
-
-
-
-
 .trip-card-container {
  
-margin-top: 5rem;
+margin-top: 0;
 padding: 0.75rem 0.75rem 1rem 0.75rem ;
 
 
-background: var(--accent-color);
+  background: var(--font-color);
   color: var(--font-color);
 
   
@@ -48,7 +43,7 @@ grid-template-rows: 1fr 4fr 2fr;
 .card-header{
     width: 100%;
     padding: 0.5rem;
-    background-color: var(--h1-color);
+    background-color: var(--accent-color);
 
     border-radius: 0.5em 0.5em 0 0;
     text-align: center;
@@ -71,7 +66,7 @@ grid-template-rows: 1fr 4fr 2fr;
     grid-row: 3/4;
 
     
-    background-color: var(--h1-color);
+    background-color: var(--accent-color);
     padding: 0.65rem;
 
     font-size: 0.75rem;
@@ -115,7 +110,7 @@ grid-template-rows: 1fr 4fr 2fr;
 
 
 .trip-card-container {
-  background-color: var(--accent-color);
+  background-color: var(--h1-color);
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.3);
   display: flex;
@@ -128,6 +123,8 @@ grid-template-rows: 1fr 4fr 2fr;
 .trip-card-container:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+<<<<<<< HEAD
+=======
 }
 
 @media (max-width: 900px) {
@@ -145,4 +142,5 @@ grid-template-rows: 1fr 4fr 2fr;
     margin: 0;
   }
 
+>>>>>>> a10727dbb78f73fcb7150dec271ec2d737114a42
 }
