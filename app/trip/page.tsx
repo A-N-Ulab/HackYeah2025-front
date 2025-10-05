@@ -17,6 +17,7 @@ export default function Trip() {
     const [currentDestinationIdx, setCurrentDestinationIdx] = useState<number>(-1)
     const [currentDestination, setCurrentDestination] = useState<Destination | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
+    const [showTODO, setShowTODO] = useState<boolean>(false)
 
     const router = useRouter()
 
@@ -94,6 +95,16 @@ export default function Trip() {
         }
     })
 
+    const bottomContainerClick = () => {
+        setShowTODO(true)
+    }
+
+    if (showTODO) {
+        setTimeout(() => {
+            setShowTODO(false)
+        }, 2000)
+    }
+
     if (loading || !currentDestination)
         return <p className="loading-text">Loading...</p>
 
@@ -118,12 +129,15 @@ export default function Trip() {
                     >
                         <DestinationsCard key={currentDestination.id} destination={currentDestination} />
                     </DraggableHorizontal>
-                    <div className="bottomContainer">
+                    <div className="bottomContainer" onClick={() => bottomContainerClick()}>
                         <img src="/icons/UpArrow.png" alt="Up Arrow" className="up-arrow" />
                         <img src="/icons/GO_icon.png" alt="Go" className="go-icon" />
                         <img src="/icons/UpArrow.png" alt="Up Arrow" className="up-arrow" />
                     </div>
                 </div>
+            </div>
+            <div className={"todo-container " + (showTODO ? "visible" : "")}>
+                <p>W krótce...</p>
             </div>
         </Auth>
     )

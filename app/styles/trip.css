@@ -145,6 +145,22 @@
 }
 
 
+.todo-container {
+    display: block;
+    position: fixed;
+    top: -100px;
+    right: 10px;
+    padding: 20px;
+    width: 230px;
+    background-color: #ac3232;
+    color: #fff;
+
+    transition: top .2s;
+}
+.todo-container.visible {
+    top: 10px;
+}
+
 /* Responsive design */
 @media (max-width: 1024px) {
  
