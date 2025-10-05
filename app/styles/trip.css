@@ -123,8 +123,6 @@ grid-template-rows: 1fr 4fr 2fr;
 .trip-card-container:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.4);
-<<<<<<< HEAD
-=======
 }
 
 @media (max-width: 900px) {
@@ -142,5 +140,4 @@ grid-template-rows: 1fr 4fr 2fr;
     margin: 0;
   }
 
->>>>>>> a10727dbb78f73fcb7150dec271ec2d737114a42
 }
