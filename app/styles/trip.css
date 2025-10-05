@@ -140,4 +140,17 @@ grid-template-rows: 1fr 4fr 2fr;
     margin: 0;
   }
 
+  .swipe-go-btn {
+    width: auto;
+  }
+
+  span.swipe {
+    font-size: 30px;
+  }
+  span.and {
+    font-size: 30px;
+  }
+  span.go {
+    font-size: 30px;
+  }
 }
