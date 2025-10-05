@@ -277,7 +277,7 @@ const DraggableHorizontal = forwardRef<DraggableHandle, Props>(function Draggabl
             </div>
             <div className="backpac" onClick={handleBackpackClick}>
                 <img src="./icons/frrenArrow.png" alt="Accept" />
-                <img src="./icons/openBackPack.png" alt="Backpack" />
+                <img src="./icons/accept.png" alt="Backpack" />
             </div>
         </>
     );
