@@ -41,7 +41,7 @@
 
 /* Bin positioned on the left - further from card */
 .bin {
-    left: 25%;
+    left: 15%;
 }
 
 .bin:hover {
@@ -50,7 +50,7 @@
 
 /* Backpack positioned on the right - further from card */
 .backpac {
-    right: 25%;
+    right: 15%;
 }
 
 .backpac:hover {
