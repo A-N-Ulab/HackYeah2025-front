@@ -87,12 +87,19 @@ span.go {
     font-size: 3rem;
 }
 .info-btn{
+     border-radius: 10px;
+    border: 2px solid var(--h1-color);
     position: absolute;
     bottom: 0.5rem;
     padding: 0.5rem;
     bottom: 2.5rem;
     
     height: 3.5rem;
+}
+.info-btn:hover{
+    transform: scale(1.05);
+    transform: rotate(360deg);
+    transition-duration: 0.5s;
 }
 
 
