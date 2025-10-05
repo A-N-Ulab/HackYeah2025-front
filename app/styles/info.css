@@ -38,7 +38,7 @@ img{
 
     width: 40vw;
 
-    border: 0.125em solid var(--font-color);
+    border: 0.125em solid var(--h1-color);
     border-radius: 0.25em;
 
 }
