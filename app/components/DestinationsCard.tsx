@@ -9,7 +9,8 @@ export default function DestinationsCard({destination}: {destination: Destinatio
 
     return (
         <div className="trip-card-container">
-            <p className="trip-title">{destination.name}</p>
+            <div className="card-header"><p className="trip-title">{destination.name}</p></div>
+            
             <div className="trip-image">
                 <TripImage destination={destination} />
             </div>
