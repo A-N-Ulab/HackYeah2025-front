@@ -1,14 +1,77 @@
-.trip-image {
-    object-fit: contain;
+.trip-card-container {
+ 
+margin-top: 5rem;    
+
+width: 30vw;
+height: 80vh;
+padding: 0.5rem;
+
+
+background: var(--accent-color);
+  color: var(--font-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transform-origin: center center;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  user-select: none;
+  touch-action: none;
 }
 
-.card-header{
-    height: 2rem;
+
+
+.card-content {
+    border-radius: 0.125rem;
 }
+
+
+
+
+.card-header{
+    padding: 0.25rem;
+}
+
+
+.trip-title {
+    color: #151515;
+    font-size: 1.5rem;
+}
+
+
+.trip-description {
+    
+    margin-top: 0.25rem;
+    
+    opacity: 0.6;
+    background-color: #151515;
+    padding: 0.5rem;
+
+    font-size: 0.5rem;
+    text-align: left;
+
+    border-radius: 2.5%;
+}
+
+
+.trip-image {
+    background-color: var(--h1-color);
+    object-fit: contain;
+    padding: 0.5rem;
+    border-radius: 2.5%;
+}
+
+.trip-image > img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 
 .trip-card-container {
-  width: 250px;
   background-color: var(--accent-color);
   border-radius: 12px;
   overflow: hidden;
@@ -16,7 +79,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
@@ -24,12 +86,4 @@
 .trip-card-container:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.4);
-}
-
-.trip-title {
-  font-family: var(--font-press-start-2p);
-  font-size: 14px;
-  color: var(--h1-color); /* np. #d69610 */
-  margin-bottom: 8px;
-  text-align: center;
 }

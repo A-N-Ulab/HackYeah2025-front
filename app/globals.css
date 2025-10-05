@@ -49,20 +49,6 @@ body {
   justify-content: center;
 }
 
-.trip-card-container {
-  width: 30vw;
-  height: 50vh;
-  background: var(--accent-color);
-  color: var(--font-color);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  transform-origin: center center;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
-  user-select: none;
-  touch-action: none;
-}
 
 .draggable-horizontal.show-like .action-indicator.like,
 .draggable-horizontal.show-dislike .action-indicator.dislike {
