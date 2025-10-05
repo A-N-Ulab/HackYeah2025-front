@@ -16,7 +16,7 @@ export default function InfoPage() {
             <div className="info-text">
                 <h1>Swipe & Go Krótki Przewodnik</h1>
 
-                <p>Użyj tych czterech prostych gestów na aktualnej karcie miejsca:</p>
+                <p>Użyj tych trzech prostych gestów na aktualnej karcie miejsca:</p>
 
                 <p>Przesuń w prawo: Polub miejsce i przejdź do następnej propozycji.</p>
 
