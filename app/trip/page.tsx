@@ -95,6 +95,10 @@ export default function Trip() {
         <Auth>
             <div className="w-full h-full">
                 <div className="container">
+                    <a href="/" className="hamburger-menu">
+                        <img src="/icons/UpArrow.png" alt="Menu" />
+                    </a>
+                    
                     <DraggableHorizontal
                         onDrag={(x, y) => {}}
                         onSwipe={(dir) => {
