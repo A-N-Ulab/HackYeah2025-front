@@ -14,17 +14,17 @@ export default function InfoPage() {
 
         <div className="info-content">
             <div className="info-text">
-                <h1>Swipe & Go Quick Guide</h1>
+                <h1>Swipe & Go Krótki Przewodnik</h1>
 
-                <p>Use these four simple gestures on the current Place Card:</p>
+                <p>Użyj tych czterech prostych gestów na aktualnej karcie miejsca:</p>
 
-                <p>Swipe Right: Like the place and move to the next suggestion.</p>
+                <p>Przesuń w prawo: Polub miejsce i przejdź do następnej propozycji.</p>
 
-                <p>Swipe Left: Skip the place and move to the next suggestion.</p>
+                <p>Przesuń w lewo: Pomiń miejsce i przejdź do następnej propozycji.</p>
 
-                <p>Swipe Down: Open the details panel to read more info, like the address and hours.</p>
+                <p>Przesuń w dół: Otwórz panel szczegółów, aby przeczytać więcej informacji, takich jak adres i godziny otwarcia.</p>
 
-                <p>Swipe Up: Start navigation to the place immediately.</p>
+                <p>Przesuń w górę: Rozpocznij nawigację do miejsca natychmiast.</p>
             </div>
             <div className="info-text">Tam, gdzie diabeł mówi dobranoc</div>
         </div>

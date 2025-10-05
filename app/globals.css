@@ -20,7 +20,6 @@
 html, body, #root {
   height: 100%;
   margin: 0;
-  overflow: hidden;
 }
 
 body {
@@ -48,6 +47,7 @@ p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .bottomContainer {
