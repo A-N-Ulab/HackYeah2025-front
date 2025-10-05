@@ -84,21 +84,21 @@ export function SwipeGoButton({swipe, and, Go}:{swipe:string, and:string, Go:str
                     <div className="modal-overlay" role="dialog" aria-modal="true">
                         <div className="modal">
                             <div className="modal-header">
-                                <h3 className="modal-title">Create new trip</h3>
-                                <button className="modal-close" onClick={closeModal} aria-label="Close">✕</button>
+                                <h3 className="modal-title">Stwórz nową podróż</h3>
+                                <button className="modal-close" onClick={closeModal} aria-label="Zamknij">✕</button>
                             </div>
 
                             <div className="modal-form">
                                 <input
                                     className="modal-input"
-                                    placeholder="Trip name"
+                                    placeholder="Nazwa wyjazdu"
                                     value={name}
                                     onChange={(e) => setName(e.target.value)}
                                     maxLength={80}
                                 />
                                 <textarea
                                     className="modal-textarea"
-                                    placeholder="Short description"
+                                    placeholder="Krótki opis"
                                     value={description}
                                     onChange={(e) => setDescription(e.target.value)}
                                     maxLength={600}
@@ -107,9 +107,9 @@ export function SwipeGoButton({swipe, and, Go}:{swipe:string, and:string, Go:str
                                 {error && <div className="modal-error">{error}</div>}
 
                                 <div className="modal-actions">
-                                    <button className="btn-ghost" onClick={closeModal} disabled={creating}>Cancel</button>
+                                    <button className="btn-ghost" onClick={closeModal} disabled={creating}>Anuluj</button>
                                     <button className="btn-primary-modal" onClick={handleCreate} disabled={creating}>
-                                        {creating ? "Creating..." : "Create"}
+                                        {creating ? "Tworzenie..." : "Stwórz"}
                                     </button>
                                 </div>
                             </div>

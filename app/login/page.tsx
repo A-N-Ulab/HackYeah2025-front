@@ -33,7 +33,7 @@ export default function Login() {
             setCookie("Token", res.token)
             setError("")
         } else {
-            setError("Wrong username or password")
+            setError("Błędny username albo hasło")
         }
 
         setUsername("")
@@ -65,18 +65,18 @@ export default function Login() {
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            placeholder="username is demo"
+                            placeholder="username to demo"
                             required
                             className="input-base"
                         />
 
-                        <label className="sr-only" htmlFor="password">Password</label>
+                        <label className="sr-only" htmlFor="password">Hasło</label>
                         <input
                             id="password"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            placeholder="password is demo"
+                            placeholder="hasło demo"
                             required
                             className="input-base"
                         />
@@ -88,7 +88,7 @@ export default function Login() {
                         )}
 
                         {isLoading && (
-                            <p className="loading-text">Loading...</p>
+                            <p className="loading-text">Ładowanie...</p>
                         )}
 
                         <button

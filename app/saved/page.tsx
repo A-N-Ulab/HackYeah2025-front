@@ -74,13 +74,13 @@ export default function Trips() {
                     <button className="btn-new-trip" onClick={openModal}>New trip</button>
                 </div> */}
                 <div className="trips-header" style={{alignItems: 'center', justifyContent: 'space-between', display: 'flex', width: '100%'}}>
-                    <h2 className="trips-header m-auto">Saved Trips</h2>
+                    <h2 className="trips-header m-auto">Zapisane miejsca</h2>
                 </div>
 
                 {loading ? (
-                    <p className="loading">Loading trips...</p>
+                    <p className="loading">Ładowanie miejsc...</p>
                 ) : trips.length === 0 ? (
-                    <p className="no-trips">No trips found</p>
+                    <p className="no-trips">Nie znaleziono miejsc</p>
                 ) : (
                     <div className="trips-container">
                         {trips.map((trip) => (
