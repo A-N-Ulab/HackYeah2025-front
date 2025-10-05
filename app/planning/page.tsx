@@ -67,27 +67,9 @@ export default function Trips() {
     return (
         <Auth>
             <div className="trips-root">
-                {/* <div>
-                    <button className="btn-new-trip" onClick={openModal}>New trip</button>
-                </div> */}
                 <div className="trips-header" style={{alignItems: 'center', justifyContent: 'space-between', display: 'flex', width: '100%'}}>
-                    <h2 className="trips-header m-auto">Saved Trips</h2>
+                    <h2 className="trips-header m-auto">Plan trip</h2>
                 </div>
-
-                {loading ? (
-                    <p className="loading">Loading trips...</p>
-                ) : trips.length === 0 ? (
-                    <p className="no-trips">No trips found</p>
-                ) : (
-                    <div className="trips-container">
-                        {trips.map((trip) => (
-                            <div key={trip.id} className="trip-card" onClick={() => onClickTrip(trip.id)}>
-                                <h2>{trip.name}</h2>
-                                <p>{trip.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                )}
             </div>
         </Auth>
     )
