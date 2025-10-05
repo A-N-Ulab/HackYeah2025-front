@@ -22,13 +22,15 @@ background: var(--accent-color);
 }
 
 .bin{
-margin: 2.5rem;
-   width: 5rem;
+  margin: 2.5rem;
+  width: 5rem;
+  cursor: pointer;
 }
 
 .backpac{
-    margin: 2.5rem;
+  margin: 2.5rem;
   width: 5rem;
+  cursor: pointer;
 }
 
 .card-content {

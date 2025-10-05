@@ -65,6 +65,28 @@ export default function Trip() {
         }
     }
 
+    const onKeyDown = (event: any) => {
+        switch(event.key) {
+            case "ArrowLeft":
+                Swipe(false);
+                break;
+            case "ArrowRight":
+                Swipe(true);
+                break;
+            case "ArrowUp":
+                SwipeUp();
+                break;
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("keydown", onKeyDown)
+
+        return () => {
+            window.removeEventListener("keydown", onKeyDown)
+        }
+    })
+
     if (loading || !currentDestination)
         return <p>Loading...</p>
 
