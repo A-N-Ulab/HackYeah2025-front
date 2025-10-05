@@ -176,8 +176,7 @@
     .draggable-horizontal {
         position: absolute;
         top: 15%;
-        left: 50%;
-        transform: translateX(-50%);
+        margin: auto;
     }
     
     /* Position bin and backpack below the card horizontally */
