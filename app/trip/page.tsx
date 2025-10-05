@@ -6,28 +6,26 @@ import Auth from "../hooks/Auth"
 import {getCookie} from "@/app/utils/cookies"
 import {useEffect, useState} from "react"
 import {Destination} from "@/app/types/Destination"
-import {getDestination} from "@/app/api/tripApi"
+import {getDestinations, sendChoice} from "@/app/api/tripApi"
 
 
 export default function Trip() {
     const [tripId, setTripId] = useState<number>(-1)
     const [destinations, setDestinations] = useState<Destination[] | null>([])
     const [state, setState] = useState<string>("")
-    const [currentDestinationId, setCurrentDestinationId] = useState<number>(-1)
+    const [currentDestinationIdx, setCurrentDestinationIdx] = useState<number>(-1)
     const [currentDestination, setCurrentDestination] = useState<Destination | null>(null)
     const [loading, setLoading] = useState<boolean>(false)
 
-    const [choices, setChoices] = useState<{id: number, choice: boolean}[]>([])
-
-    const loadDestinations = async (id: number) => {
+    const loadDestinations = async (tripId: number) => {
         setLoading(true)
         try {
-            const resp = await getDestination(id)
+            const resp = await getDestinations(tripId)
 
             if (resp?.destinations?.length > 0) {
                 setDestinations(resp.destinations)
+                setCurrentDestinationIdx(0)
                 setCurrentDestination(resp.destinations[0])
-                setCurrentDestinationId(0)
             }
         } catch (err) {
             console.error(err)
@@ -53,28 +51,18 @@ export default function Trip() {
     const Swipe = (dir: boolean) => {
         if (!currentDestination || !destinations) return
 
-        const newChoice = { id: currentDestination.id, choice: dir }
-        const updatedChoices = [...choices, newChoice]
-        setChoices(updatedChoices)
+        const resp = sendChoice(tripId, currentDestination?.id || -1, dir)
+        console.log(resp)
 
-        const newId = currentDestinationId + 1
-
-        if (newId >= destinations.length) {
-            console.log("Wybory: ", updatedChoices)
-
-            setChoices([])
+        if (currentDestinationIdx + 1 >= destinations.length) {
             setCurrentDestination(null)
-            setCurrentDestinationId(-1)
-
-            setLoading(true)
-            // Wysyłać stare dane i nowe dane dostać
-            // .finally(() => setLoading(false))
-
+            loadDestinations(tripId)
             return
+        }else {
+            // Still some destinations to show
+            setCurrentDestinationIdx(currentDestinationIdx + 1)
+            setCurrentDestination(destinations[currentDestinationIdx + 1])
         }
-
-        setCurrentDestinationId(newId)
-        setCurrentDestination(destinations[newId])
     }
 
     if (loading || !currentDestination)

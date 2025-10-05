@@ -6,17 +6,17 @@ export const getAllTrips = async () => {
     const response = await axiosInstance.post('/trips', {
         "token": getCookie("Token")
     })
-    return response.data ? response.data : null
+    return response.data || null
 }
 
-export const getDestination = async (tripId: number) => {
+export const getDestinations = async (tripId: number) => {
     const response = await axiosInstance.post('/destinations', {
         "token": getCookie("Token"),
         "trip_id": tripId
     })
     console.log(response)
 
-    return response.data ? response.data : null
+    return response.data || null
 }
 
 export const createTrip = async (name: string, description: string) => {
@@ -26,5 +26,16 @@ export const createTrip = async (name: string, description: string) => {
         "description": description
     })
 
-    return response.data ? response.data : null
+    return response.data || null
+}
+
+export const sendChoice = async (tripId: number, destinationId: number, choice: boolean) => {
+    const response = await axiosInstance.post("/choice", {
+        "token": getCookie("Token"),
+        "trip_id": tripId,
+        "destination_id": destinationId,
+        "choice": choice,
+    })
+
+    return response.data || null
 }
