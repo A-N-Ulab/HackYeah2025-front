@@ -52,7 +52,7 @@ export default function Trip() {
             const resp = await getDestination(id)
 
             if (resp?.destinations?.length > 0) {
-                setDestinations(destinations_test) //resp.destinations
+                setDestinations(resp.destinations)
                 setCurrentDestination(resp.destinations[0])
                 setCurrentDestinationId(0)
             }
@@ -67,7 +67,7 @@ export default function Trip() {
         const tripIdCookie = getCookie("tripId")
         if (!tripIdCookie) return
 
-        const id = Number(2) //tripIdCookie
+        const id = Number(tripIdCookie)
         setTripId(id)
 
         loadDestinations(id)
